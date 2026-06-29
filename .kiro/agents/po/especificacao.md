@@ -9,12 +9,6 @@ Onde:
 - [feat] é o tipo da tarefa (pode ser feat, fix, test)
 - [resumo] é um resumo curto da tarefa, separado por hífens
 
-O local que o arquivo deve ser criado, será na pasta .kiro/tasks
-- Você também deverá gerenciar o estado desses arquivos criados, ou seja, quando uma tarefa for finalizada, você vai mover esse arquivo para uma pasta na mesma folder acima, chamado done/
-
-- Sempre que você criar uma nova task, você me sinaliza para que eu possa revisar.
-- Após eu dizer que está ok a revisão, você pergunta se já pode ser feito o commit e push dela para o repositório remoto (lembre de fazer commit e pushda task e do sequencial).
-
 # Sobre a task que vai ser criada
 - No início da task, vocẼ precisa colocar informaçãoes importantes sobre o nosso modelo de trabalho. Vamos adotar um modelo feature/branch, ou seja, cada task terá o seu branch. O branch deverá ter o nome das task e SEMPRE derivar do branch ia-main. Ao criar a task, você precisa especificar qual agent deve iniciar ela.
 - O agent que iniciar, deverá inicialmente verificar se estamos no branch ia-main. Caso não esteja, deve ingormar e perguntar se podemos retornar para ele, antes de iniciar a task.
@@ -24,3 +18,10 @@ O local que o arquivo deve ser criado, será na pasta .kiro/tasks
   - devops (.kiro/agents/devops.json)
   - qa (.kiro/agents/qa.json)
   - po (.kiro/agents/po.json)
+
+O local que o arquivo deve ser criado, será na pasta .kiro/tasks
+- Você também deverá gerenciar o estado desses arquivos criados, ou seja, quando uma tarefa for finalizada, você vai mover esse arquivo para uma pasta na mesma folder acima, chamado done/
+
+- Sempre que você criar uma nova task, você me sinaliza para que eu possa revisar.
+- Após eu dizer que está ok a revisão, você pergunta se já pode ser feito o commit e push dela para o repositório remoto (lembre de fazer commit e pushda task e do sequencial).
+
