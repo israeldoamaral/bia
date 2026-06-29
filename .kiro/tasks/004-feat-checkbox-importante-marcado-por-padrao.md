@@ -1,26 +1,46 @@
-# 004 - Checkbox "Importante" marcado por padrão no cadastro de tarefa
+# [004] feat: Checkbox "Importante" marcado por padrão no cadastro de tarefas
+
+## Modelo de Trabalho
+- **Branch:** `004-feat-checkbox-importante-marcado-por-padrao`
+- **Derivar de:** `ia-main`
+- **Agente responsável:** dev (`.kiro/agents/dev.json`)
+
+## Instruções de Início para o Agente
+1. Verificar se está no branch `ia-main`. Caso não esteja, informar e perguntar se pode retornar a ele antes de iniciar.
+2. Após autorização, mover esta task para a pasta `doing/`, fazer commit e push no branch `ia-main`.
+3. Criar o branch `004-feat-checkbox-importante-marcado-por-padrao` a partir de `ia-main` e iniciar a implementação.
+
+---
+
+## Descrição
+Na tela de cadastro de tarefas, o checkbox **"Importante"** deve vir **marcado por padrão** sempre que o formulário for aberto ou resetado. Apenas o estado inicial do checkbox deve ser alterado; o comportamento do restante do formulário permanece igual.
+
+## Critérios de Aceite
+- [ ] Ao abrir o formulário de cadastro, o checkbox "Importante" já aparece marcado (`checked = true`).
+- [ ] O usuário ainda pode desmarcar o checkbox antes de salvar.
+- [ ] Após salvar uma tarefa, o formulário é resetado e o checkbox volta a aparecer **marcado** (não desmarcado).
+- [ ] Nenhum outro campo do formulário teve seu comportamento alterado.
+- [ ] A tarefa salva reflete corretamente o valor do checkbox (importante = true por padrão, salvo se o usuário desmarcar).
+
+## Localização do Arquivo
+- **Arquivo:** `client/src/components/AddTask.jsx`
+- **Linha a alterar:** estado inicial de `importante`
+  ```js
+  // Antes
+  const [importante, setImportante] = useState(false);
+
+  // Depois
+  const [importante, setImportante] = useState(true);
+  ```
+- **Reset após submit:** garantir que o `setImportante(false)` na função `onSubmit` seja alterado para `setImportante(true)`.
+
+## Observações Técnicas
+- Mudança mínima e cirúrgica — apenas dois pontos no mesmo arquivo.
+- Não requer alterações no backend, banco de dados ou outros componentes.
+- Validar visualmente que o checkbox aparece marcado ao carregar a página.
 
 ## Tipo
 `feat`
 
-## Descrição
-Na tela de cadastro de tarefa, o checkbox **"Importante"** deve vir marcado por padrão ao abrir o formulário, facilitando o fluxo do usuário que, na maioria das vezes, cadastra tarefas importantes.
-
-## Contexto Técnico
-- **Arquivo:** `client/src/components/AddTask.jsx`
-- **Estado atual:** `const [importante, setImportante] = useState(false);`
-- **Estado esperado:** `const [importante, setImportante] = useState(true);`
-
-> ⚠️ Apenas o valor inicial do estado deve ser alterado. O comportamento do checkbox (desmarcar/marcar livremente) permanece igual. Após o envio do formulário, o reset também deve voltar para `true` (linha `setImportante(false)` → `setImportante(true)`).
-
-## Critérios de Aceite
-- [ ] Ao abrir/carregar o formulário de cadastro, o checkbox "Importante" já aparece marcado
-- [ ] O usuário ainda consegue desmarcar o checkbox manualmente
-- [ ] Após salvar uma tarefa, o checkbox volta marcado para o próximo cadastro
-- [ ] Nenhum outro campo ou comportamento do formulário é afetado
-
-## Arquivos a Modificar
-- `client/src/components/AddTask.jsx`
-
 ## Estimativa
-**P** (Pequena) — alteração de 2 linhas
+XS (menos de 30 minutos)

@@ -14,3 +14,13 @@ O local que o arquivo deve ser criado, será na pasta .kiro/tasks
 
 - Sempre que você criar uma nova task, você me sinaliza para que eu possa revisar.
 - Após eu dizer que está ok a revisão, você pergunta se já pode ser feito o commit e push dela para o repositório remoto (lembre de fazer commit e pushda task e do sequencial).
+
+# Sobre a task que vai ser criada
+- No início da task, vocẼ precisa colocar informaçãoes importantes sobre o nosso modelo de trabalho. Vamos adotar um modelo feature/branch, ou seja, cada task terá o seu branch. O branch deverá ter o nome das task e SEMPRE derivar do branch ia-main. Ao criar a task, você precisa especificar qual agent deve iniciar ela.
+- O agent que iniciar, deverá inicialmente verificar se estamos no branch ia-main. Caso não esteja, deve ingormar e perguntar se podemos retornar para ele, antes de iniciar a task.
+- Após ser autorizado, ele deverá mover a task para pasta doing, fazer commit e push no branch ia-main e criar o branch para iniciar a implementação.
+- Você deverá delegar a atividade para inicio de um desses agentes.
+  - dev (.kiro/agents/dev.json)
+  - devops (.kiro/agents/devops.json)
+  - qa (.kiro/agents/qa.json)
+  - po (.kiro/agents/po.json)
